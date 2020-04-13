@@ -56,6 +56,7 @@
         1. If _R_ contains any |GroupName|, then
           1. Let _groups_ be ObjectCreate(*null*).
           1. <ins>Let _groupNames_ be a new empty List.</ins>
+          1. <ins>Append *undefined* to _groupNames_.</ins>
         1. Else,
           1. Let _groups_ be *undefined*.
           1. <ins>Let _groupNames_ be *undefined*.</ins>
@@ -138,9 +139,9 @@
       <emu-alg>
         1. Assert: Type(_S_) is String.
         1. Assert: _indices_ is a List.
-        1. Assert: _groupNames_ is a List or is *undefined*.
         1. Let _n_ be the number of elements in _indices_.
         1. Assert: _n_ &lt; 2<sup>32</sup>-1.
+        1. Assert: _groupNames_ is *undefined* or is a List with _n_ elements.
         1. Set _A_ to ! ArrayCreate(_n_).
         1. Assert: The value of _A_'s `"length"` property is _n_.
         1. If _groupNames_ is not *undefined*, then
